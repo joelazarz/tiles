@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const boards = new Boards
     boards.getBoards()
 
-    
     // event listener for BOARD form - initially, this is just for seeding some data
     const boardForm = document.querySelector('.add-board-form')
     boardForm.addEventListener('submit', function(e){
