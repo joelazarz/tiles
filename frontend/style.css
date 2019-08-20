@@ -38,24 +38,86 @@ header {
     }
 }
 
+/* main page board navigation */
+
 .board {
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 295px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 0.03em dotted lightsteelblue;
+
+    
+}
+
+.board span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    margin-top: 4em;
+    color: rgb(70, 70, 70);
+    display: inline-block;
+    line-height: normal;
+}
+
+.board span:hover{
+    color: rgb(189, 189, 189);
+}
+
+.board:hover{
+    border: 0.03em dotted lightgreen;
+}
+
+/* while in board - block attributes */
+
+.block {
     background-color: white;
     text-align: center;
     vertical-align: middle;
     padding-top: 2px;
     padding-bottom: 2px;
-}
-
-.board:hover {
-    padding-top: 2px;
-    padding-bottom: 2px;
     border: 0.03em dotted lightsteelblue;
 }
 
-.board img{
+.block img{
     max-height: 296px;
     max-width: 296px;
     display: inline-block;
+}
+
+/* new board form styling */
+#new-board-form {
+    position: fixed;
+    z-index: 1;
+    margin-left: 35%;
+}
+
+#new-board {
+    background: rgb(223, 223, 223);
+    padding: 4em;
+    width: 15em;
+    height: 15em;
+    z-index: 1;
+    border: 0.07em dotted rgb(161, 255, 184);
+}
+
+#new-board input{
+    width: 20em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-top: 2px;
+    padding-bottom: 1em;
+    padding-left: 5px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+input[type="submit" i] {
+    -webkit-appearance: square-button;
+    background: ivory;
+    padding: 1.3em;
+    margin-top: 2em;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 
@@ -76,4 +138,40 @@ footer {
     position: fixed;
     bottom: 7px;
     right: 4em;
+}
+
+.add-board-message{
+    font-family: 'Fira Sans', sans-serif;
+    position: fixed;
+    bottom: 1.5em;
+    right: 10em;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    display: none;
+}
+
+.add-board img:hover{
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+/* animations */
+
+@keyframes spin { 
+    from { 
+        transform: rotate(0deg); 
+    } to { 
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes fadeIn { 
+    from { 
+        opacity: 0; 
+    } to { 
+        opacity: 1; 
+    }
 }

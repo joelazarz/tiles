@@ -15,13 +15,14 @@ class Fetch{
         .then(function(data){
             let blocks = new Block
             blocks.renderBlocks(data)
+            blocks.renderNewBlockPrep()
         })
     }
 
     // create board POST fetch
-    createBoard(form){
-        const boardNameInput = document.querySelector('.board-name')
-        const boardDescriptionInput = document.querySelector('.board-description')
+    createBoard(){
+        const boardNameInput = document.getElementById('board-name')
+        const boardDescriptionInput = document.getElementById('board-description')
         fetch("http://localhost:3000/api/boards",{
             method: "POST",
             headers:
@@ -34,11 +35,10 @@ class Fetch{
                 description: boardDescriptionInput.value})
         })
         .then(response => response.json())
-        form.reset()
     }
 
     // create block POST fetch
-    createBlock(form){
+    createBlock(){
         const blockDescriptionInput = document.querySelector('.block-description')
         const blockPhotoInput = document.querySelector('.block-photo')
         const blockBoardIdInput = document.querySelector('.board-id-description')
@@ -55,7 +55,6 @@ class Fetch{
                 board_id: blockBoardIdInput.value})
         })
         .then(response => response.json())
-        form.reset()
     }
 
 }

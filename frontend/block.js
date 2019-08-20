@@ -12,11 +12,19 @@ class Block{
     renderBlocks(data){
         let grid = document.getElementById('grid-container')
         grid.innerHTML = '';
-        data.blocks.forEach(block => {grid.insertAdjacentHTML("beforeend",
+        data.blocks.forEach(block => {grid.insertAdjacentHTML("afterbegin",
         `
-        <div class="board"><img src="${block.photo}" data-id="${block.board_id}"></div>
+        <div class="block"><img src="${block.photo}" data-id="${block.board_id}"></div>
         `
         )})
+    }
+
+    renderNewBlockPrep(){
+        let grid = document.getElementById('grid-container')
+        grid.insertAdjacentHTML("afterbegin",
+        `
+        <div class="block">CLICK TO PASTE LINK</div>
+        `)
     }
     
 }

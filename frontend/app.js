@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    const fetch = new Fetch
     // init boards class - fetch
+    const fetch = new Fetch
+    const board = new Board
     
     fetch.getBoards()
 
@@ -12,27 +13,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // event listener for board tiles
     const clickBoard = document.querySelector("#grid-container")
     clickBoard.addEventListener('click', function(e){
-        if(e.target.className = 'test'){
+        if(e.target.className = "board"){
             let boardId = e.target.dataset.id;
             fetch.getBlocks(boardId)
         }
     })
     
-    
-    
-    // event listener for new BOARD form
+    // event listener for new BOARD button
     const addBoard = document.querySelector(".add-board")
     addBoard.addEventListener('click', function(e){
-        e.preventDefault()
         console.log("clicked")
+        board.renderNewBoardForm()
     })
 
-    // event listener for BLOCK form - initially, this is just for seeding some data
-    // const blockForm = document.querySelector('.add-block-form')
-    // blockForm.addEventListener('submit', function(e){
-    //     e.preventDefault()
-    //     fetch.createBlock(e.target)
-    // })
+    let newBoardForm = document.getElementById('new-board-form')
+    newBoardForm.addEventListener("submit", function(e){
+        fetch.createBoard()
+        fetch.getBoards()
+    })
 
+
+    // event listener for add 
+    addBoard.addEventListener("mouseover", function(){
+        document.querySelector(".add-board-message").style.display = "inline";
+    })
+    addBoard.addEventListener("mouseleave", function(){
+        document.querySelector(".add-board-message").style.display = "none";
+    })
 
 }) 
