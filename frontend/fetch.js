@@ -1,4 +1,4 @@
-class Boards{
+class Fetch{
 
     getBoards(){
         return fetch('http://localhost:3000/api/boards')
@@ -6,7 +6,7 @@ class Boards{
         .then(json => console.log(json));
     }
 
-    // create board POST fetch - for seeding
+    // create board POST fetch
     createBoard(form){
         const boardNameInput = document.querySelector('.board-name')
         const boardDescriptionInput = document.querySelector('.board-description')
@@ -25,7 +25,7 @@ class Boards{
         form.reset()
     }
 
-    // create block POST fetch - for seeding
+    // create block POST fetch
     createBlock(form){
         const blockDescriptionInput = document.querySelector('.block-description')
         const blockPhotoInput = document.querySelector('.block-photo')
