@@ -86,6 +86,15 @@ header {
     display: inline-block;
 }
 
+.add-block-prep{
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 0.03em dotted lightsteelblue;
+}
+
 /* new board form styling */
 #new-board-form {
     position: fixed;

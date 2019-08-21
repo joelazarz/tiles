@@ -15,7 +15,7 @@ class Fetch{
         .then(function(data){
             let blocks = new Block
             blocks.renderBlocks(data)
-            blocks.renderNewBlockPrep()
+            blocks.renderNewBlockPrep(data)
         })
     }
 
@@ -39,9 +39,8 @@ class Fetch{
 
     // create block POST fetch
     createBlock(){
-        const blockDescriptionInput = document.querySelector('.block-description')
-        const blockPhotoInput = document.querySelector('.block-photo')
-        const blockBoardIdInput = document.querySelector('.board-id-description')
+        const blockPhotoInput = document.querySelector("#block-photo")
+        const blockBoardIdInput = document.querySelector("#block-id")
         fetch("http://localhost:3000/api/blocks",{
             method: "POST",
             headers:
@@ -50,11 +49,13 @@ class Fetch{
                 Accept: "application/json"
             },
             body: JSON.stringify({
-                description: blockDescriptionInput.value,
                 photo: blockPhotoInput.value, 
                 board_id: blockBoardIdInput.value})
         })
         .then(response => response.json())
+        .then(function(data){
+            getBlocks(data.id)
+        })
     }
 
 }

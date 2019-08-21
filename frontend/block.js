@@ -19,12 +19,28 @@ class Block{
         )})
     }
 
-    renderNewBlockPrep(){
+    renderNewBlockPrep(data){
         let grid = document.getElementById('grid-container')
         grid.insertAdjacentHTML("afterbegin",
         `
-        <div class="block">CLICK TO PASTE LINK</div>
+        <div class="add-block-prep">
+        <form id="adding-block">
+        <input type="textarea" name="photo" placeholder="paste image url..." id="block-photo">
+        <br/>
+        <input type="hidden" id="block-id" value="${data.id}">
+        <br/>
+        <input type="submit" value="Create block"></input>
+        </form>
+        </div>
         `)
+
+        let newBlockForm = document.getElementById('adding-block')
+        newBlockForm.addEventListener("submit", function(e){
+            e.preventDefault()
+            let fetch = new Fetch
+            fetch.createBlock()
+        })
     }
-    
+
+
 }

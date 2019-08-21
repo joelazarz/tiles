@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // event listener for board tiles
     const clickBoard = document.querySelector("#grid-container")
     clickBoard.addEventListener('click', function(e){
-        if(e.target.className = "board"){
+        if(e.target.className == "board"){
             let boardId = e.target.dataset.id;
             fetch.getBlocks(boardId)
         }
@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch.createBoard()
         fetch.getBoards()
     })
+    
 
-
-    // event listener for add 
+    // event listener for add board button in footer
     addBoard.addEventListener("mouseover", function(){
         document.querySelector(".add-board-message").style.display = "inline";
     })
