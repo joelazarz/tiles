@@ -14,7 +14,11 @@ class Block{
         grid.innerHTML = '';
         data.blocks.forEach(block => {grid.insertAdjacentHTML("afterbegin",
         `
-        <div class="block"><img src="${block.photo}" data-id="${block.board_id}"></div>
+        
+        <div class="block">
+        <div class="block-handle"><img src="https://img.icons8.com/ios/50/000000/ellipsis.png"></div>
+        <img src="${block.photo}" data-id="${block.board_id}">
+        </div>
         `
         )})
     }

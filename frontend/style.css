@@ -81,9 +81,21 @@ header {
 }
 
 .block img{
+    position: relative;
     max-height: 296px;
     max-width: 296px;
     display: inline-block;
+}
+
+.block-handle{
+    position: absolute;
+    z-index: 1;
+    padding: 0.5em;
+}
+
+.block-handle img{
+    height: 1.5em;
+    width: 1.5em;
 }
 
 .add-block-prep{
