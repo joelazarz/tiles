@@ -6,16 +6,21 @@ document.addEventListener('DOMContentLoaded', function(){
     
     fetch.getBoards()
 
-    
-    
-    
-    
+
+
     // event listener for board tiles
     const clickBoard = document.querySelector("#grid-container")
     clickBoard.addEventListener('click', function(e){
         if(e.target.className == "board"){
             let boardId = e.target.dataset.id;
             fetch.getBlocks(boardId)
+        }
+    })
+
+    clickBoard.addEventListener('click', function(e){
+        if(e.target.className == "indiv-block"){
+            console.log(e.target.dataset.id)
+            fetch.renderIndivBlock(e.target.dataset.id)
         }
     })
     
@@ -29,6 +34,12 @@ document.addEventListener('DOMContentLoaded', function(){
     let newBoardForm = document.getElementById('new-board-form')
     newBoardForm.addEventListener("submit", function(e){
         fetch.createBoard()
+        fetch.getBoards()
+    })
+
+    // event listener for board collection navigation button 
+    const boardCollectionNav = document.querySelector(".board-collection-button")
+    boardCollectionNav.addEventListener("click", function(){
         fetch.getBoards()
     })
     

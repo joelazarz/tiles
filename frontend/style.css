@@ -6,7 +6,6 @@ header {
     width: 105%;
     z-index: 1;
     background-color: rgb(231, 241, 255);
-
 }
 
 
@@ -89,17 +88,6 @@ header {
     display: inline-block;
 }
 
-.block-handle{
-    position: absolute;
-    z-index: 1;
-    padding: 0.5em;
-}
-
-.block-handle img{
-    height: 1.5em;
-    width: 1.5em;
-}
-
 .add-block-prep{
     background-color: white;
     text-align: center;
@@ -121,12 +109,39 @@ header {
 }
 
 
+/* indiv block view page  */
+.indiv-block-view{
+    padding-bottom: 55em;
+}
+
+.indiv-block-view img{
+    padding-right: 1em;
+    max-width: 48vw;
+}
+
+.comment-section{
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+.block-comment{
+    padding-left: 1em;
+    max-width: 48vw;
+}
+
+
 
 /* new board form styling */
 #new-board-form {
     position: fixed;
     z-index: 1;
     margin-left: 35%;
+}
+
+.new-board-header{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 1em;
 }
 
 #new-board {
@@ -169,6 +184,19 @@ footer {
     background-color: rgb(224, 237, 255);
 }
 
+.board-collection-button{
+    position: fixed;
+    bottom: 9px;
+    left: 4em;
+}
+
+.board-collection-button:hover{
+    animation-name: pulse;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
 .add-board{
     position: fixed;
     bottom: 7px;
@@ -209,4 +237,12 @@ footer {
     } to { 
         opacity: 1; 
     }
+}
+
+@keyframes pulse {
+	25% {
+		transform: scale(1.03);
+	} 75% {
+		transform: scale(1.06);
+	}
 }

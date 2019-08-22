@@ -19,6 +19,16 @@ class Fetch{
         })
     }
 
+    renderIndivBlock(blockId){
+        return fetch(`http://localhost:3000/api/blocks/${blockId}`)
+        .then(resp => resp.json())
+        .then(function(block){
+            let blocks = new Block
+            blocks.renderIndivBlockView(block)
+        })
+    }
+
+
     // create board POST fetch
     createBoard(){
         const boardNameInput = document.getElementById('board-name')
@@ -37,6 +47,7 @@ class Fetch{
         .then(response => response.json())
     }
 
+
     // create block POST fetch
     createBlock(){
         const blockPhotoInput = document.querySelector("#block-photo")
@@ -53,9 +64,25 @@ class Fetch{
                 board_id: blockBoardIdInput.value})
         })
         .then(response => response.json())
-        .then(function(data){
-            getBlocks(data.id)
+        .then(function(newBlock){
+            let blocks = new Block
+            blocks.renderNewBlock(newBlock)
         })
     }
+
+    createComment(){
+        fetch("http://localhost:3000/api/comments",{
+            method: "POST",
+            headers:
+            {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                photo: blockPhotoInput.value, 
+                board_id: blockBoardIdInput.value})
+        })
+    }
+
 
 }
