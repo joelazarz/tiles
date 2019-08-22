@@ -25,6 +25,7 @@ class Fetch{
         .then(function(block){
             let blocks = new Block
             blocks.renderIndivBlockView(block)
+            blocks.renderBlockComments(block)
         })
     }
 
@@ -70,7 +71,19 @@ class Fetch{
         })
     }
 
+    // create comment POST fetch
     createComment(){
+        let blockComments = document.querySelector("#all-block-comments")
+        let blockIdInput = document.querySelector("#block-id")
+        let blockCommentInput = document.querySelector("#block-comment")
+        
+        blockComments.insertAdjacentHTML("beforeend",
+        `
+        <div class="block-comment">
+        <li>${blockCommentInput.value}</li>
+        </div>
+        `)
+
         fetch("http://localhost:3000/api/comments",{
             method: "POST",
             headers:
@@ -79,9 +92,10 @@ class Fetch{
                 Accept: "application/json"
             },
             body: JSON.stringify({
-                photo: blockPhotoInput.value, 
-                board_id: blockBoardIdInput.value})
+                comment: blockCommentInput.value, 
+                block_id: blockIdInput.value})
         })
+        .then(response => response.json())
     }
 
 

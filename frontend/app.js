@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     clickBoard.addEventListener('click', function(e){
         if(e.target.className == "indiv-block"){
-            console.log(e.target.dataset.id)
             fetch.renderIndivBlock(e.target.dataset.id)
         }
     })
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function(){
     // event listener for new BOARD button
     const addBoard = document.querySelector(".add-board")
     addBoard.addEventListener('click', function(e){
-        console.log("clicked")
         board.renderNewBoardForm()
     })
 

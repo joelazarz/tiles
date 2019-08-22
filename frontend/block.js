@@ -30,20 +30,32 @@ class Block{
         <div class="indiv-block-view">
         <img src="${block.photo}" data-id="${block.board_id}">
         </div>
-        <div id="comment-section" data-id="${block.id}">
-        <form id="block-comment-form">
-        <input type="text" class="comment-submit" wrap="hard" cols="20" name="comment" autofocus="autofocus" placeholder="leave comment...">
+        <div id="comment-section">
+        <form class="block-comment-form" data-id="${block.id}">
+        <input type="text" class="comment-submit" wrap="hard" cols="20" name="comment" autofocus="autofocus" placeholder="leave comment..." id="block-comment">
         <input type="hidden" id="block-id" value="${block.id}">
         <input type="submit" value="Submit"></input>
         </form>
+        <div id="all-block-comments">
+        </div>
         </div>
         `)
 
-        let commentSection = document.querySelector(".comment-section")
-        block.comments.forEach(comment => {commentSection.insertAdjacentHTML("afterbegin",
+        grid.addEventListener("submit", function(e){
+            if(e.target.className == "block-comment-form"){
+                e.preventDefault()
+                let fetch = new Fetch
+                fetch.createComment()
+            }
+        })
+    }
+
+    renderBlockComments(block){
+        let blockComments = document.querySelector("#all-block-comments")
+        block.comments.forEach(comment => {blockComments.insertAdjacentHTML("afterbegin",
         `
         <div class="block-comment">
-
+        <li>${comment.comment}</li>
         </div>
         `)})
     }
