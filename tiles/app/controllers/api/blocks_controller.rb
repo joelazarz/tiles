@@ -8,7 +8,7 @@ class Api::BlocksController < ApplicationController
 
 
     def create
-        block = Block.create(description:params[:description],photo:params[:photo],board_id:params[:board_id])
+        block = Block.create(photo:params[:photo],board_id:params[:board_id])
         render json: block
     end
 

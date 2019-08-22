@@ -10,15 +10,6 @@ class Board{
 
     renderBoards(data){
         let grid = document.getElementById('grid-container')
-        
-        // let allBoards = []
-        // data.forEach(i => {allBoards.push(i.blocks[0])})
-        // allBoards.forEach(x => {grid.insertAdjacentHTML("beforeend",
-        // `
-        // <div class="block"><img src="${x.photo}" data-id="${x.board_id}"></div>
-        // `
-        // )})
-
         data.forEach(board => {grid.insertAdjacentHTML("beforeend",
         `
         <div class="board" data-id="${board.id}"><span data-id="${board.id}">${board.name}</span></div>
@@ -46,6 +37,6 @@ class Board{
         `;
     }
 
-    
+
 
 }
