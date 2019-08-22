@@ -9,8 +9,9 @@ header {
 
 }
 
-/* grid container styling */
 
+
+/* grid container styling */
 #grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -38,8 +39,9 @@ header {
     }
 }
 
-/* main page board navigation */
 
+
+/* main page board navigation */
 .board {
     background-color: white;
     text-align: center;
@@ -48,8 +50,6 @@ header {
     padding-top: 2px;
     padding-bottom: 2px;
     border: 0.03em dotted lightsteelblue;
-
-    
 }
 
 .board span{
@@ -69,8 +69,9 @@ header {
     border: 0.03em dotted lightgreen;
 }
 
-/* while in board - block attributes */
 
+
+/* while in board - block attributes */
 .block {
     background-color: white;
     text-align: center;
@@ -78,6 +79,7 @@ header {
     padding-top: 2px;
     padding-bottom: 2px;
     border: 0.03em dotted lightsteelblue;
+    min-width: 300px;
 }
 
 .block img{
@@ -107,6 +109,19 @@ header {
     border: 0.03em dotted lightsteelblue;
 }
 
+#adding-block input{
+    height: -webkit-fill-available;
+    width: 316px;
+    font-size: x-large;
+    border: none;
+}
+
+#adding-block input[type="submit" i]{
+    display: none;
+}
+
+
+
 /* new board form styling */
 #new-board-form {
     position: fixed;
@@ -133,7 +148,7 @@ header {
     font-family: 'Fira Sans', sans-serif;
 }
 
-input[type="submit" i] {
+#new-board input[type="submit" i] {
     -webkit-appearance: square-button;
     background: ivory;
     padding: 1.3em;
@@ -144,7 +159,6 @@ input[type="submit" i] {
 
 
 /* footer styling  */
-
 footer {
     position: fixed;
     bottom: 0;
@@ -179,8 +193,8 @@ footer {
 }
 
 
-/* animations */
 
+/* animations */
 @keyframes spin { 
     from { 
         transform: rotate(0deg); 

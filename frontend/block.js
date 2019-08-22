@@ -16,7 +16,7 @@ class Block{
         `
         
         <div class="block">
-        <div class="block-handle"><img src="https://img.icons8.com/ios/50/000000/ellipsis.png"></div>
+        <div class="block-handle"><img src="https://img.icons8.com/nolan/64/000000/menu.png"></div>
         <img src="${block.photo}" data-id="${block.board_id}">
         </div>
         `
@@ -29,7 +29,7 @@ class Block{
         `
         <div class="add-block-prep">
         <form id="adding-block">
-        <input type="textarea" name="photo" placeholder="paste image url..." id="block-photo">
+        <input type="textarea" wrap="hard" cols="20" name="photo" autofocus="autofocus" placeholder="paste image url..." id="block-photo">
         <br/>
         <input type="hidden" id="block-id" value="${data.id}">
         <br/>
