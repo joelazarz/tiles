@@ -119,14 +119,38 @@ header {
     max-width: 48vw;
 }
 
-.comment-section{
+#comment-section{
     grid-column-start: 2;
     grid-column-end: 5;
 }
 
-.block-comment{
-    padding-left: 1em;
+.block-comment-form{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    margin-right: 5em;
+    
+}
+
+.block-comment-form input{
+    width: 4em;
     max-width: 48vw;
+    min-width: 40vw;
+    min-height: 4em;
+}
+
+.block-comment-form input[type="submit" i]{
+    width: 5em;
+}
+
+.block-comment{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    padding-left: 1em;
+    padding-top: 2em;
+    max-width: 48vw;
+    min-width: 40vw;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 2em;
 }
 
 

@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function(){
     
     // event listener for new BOARD button
     const addBoard = document.querySelector(".add-board")
-    addBoard.addEventListener('click', function(e){
+    addBoard.addEventListener('click', function(){
         board.renderNewBoardForm()
     })
 
     let newBoardForm = document.getElementById('new-board-form')
-    newBoardForm.addEventListener("submit", function(e){
+    newBoardForm.addEventListener("submit", function(){
         fetch.createBoard()
         fetch.getBoards()
     })
